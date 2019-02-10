@@ -1,12 +1,16 @@
-<script>
-var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
-var text = "";
-var i;
-for (i = 0; i < cars.length; i++) {
-  text += cars[i] + "<br>";
-}
-document.getElementById("demo").innerHTML = text;
-</script>
+public static String encrypt(String s, int k) {
+    char[] arr = s.toCharArray();
+    int ascii;
+    for(int i = 0; i < arr.length; i++) {
+        ascii = (int) arr[i];
+        ascii = ascii + k;
+        // System.out.println(ascii);
+        if (ascii > 126) {
+            ascii = 32 + (126 % ascii);
+            // System.out.print("Changed: " + ascii);
+        }
 
-</body>
-</html>
+        arr[i] = (char) ascii;
+    }
+    return String.valueOf(arr);
+}
