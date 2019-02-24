@@ -11,18 +11,20 @@
       name: "Daisy Miller",
       grade: "A+",
       gender: "f"
+    },
+    {
+      netid: "evgeny",
+      name: "Evgeny Mikhaylovich Chukharev-Hudilainen",
+      grade: "D+",
+      gender: "m"
     }
   ]
 
   for (i=0; i<students.length; i++) {
-  	}
-  	if (gender == "f"){
-    alert(" Dear Ms. "
+    names = students[i].name.split(" ")
+    last_name = names[names.length-1]
+    if (students[i].gender === 'm') salutation = 'Mr.'; else salutation = 'Ms.';
+    alert("Hello " + salutation + ' ' + last_name + ", \n\nYour grade is " + students[i].grade)
   }
-  for (i=0; i<students.length; i++) {
-  }
-  if (gender == "m") {
-  alert("Dear Mr. " + students[i].name + ", \n\nyour grade is " + students[i].grade)
-  } 
 
-</script>
+</script>     
