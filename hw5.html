@@ -1,6 +1,8 @@
 <script>
 x = prompt ("enter a sentence") 
-	x = x.replace(/([a+e+i+o+u+])/g,"aig$1"
+x = x.replace(/([aeiouy][bcdfghjklmnpqrstvwxz]+)[e]\b/g,"$1!")
+	x = x.replace(/([a+e+i+o+u+y+])/g,"aig$1")
+	x = x.replace(/!/g, "e")
 alert (x)
 </script> 
  
