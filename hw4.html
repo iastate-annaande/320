@@ -1,0 +1,35 @@
+<script> 
+  learner_model = {on: 0, in: 0, with: 0, under: 0, around: 0}
+  prepositions = ['on','in','with','under','around']
+  
+  
+  sentences = {
+    on: ['The cat is ___ top of the fence.', 'My birthday is ____ Friday.', 'My house is __ 3rd St.','I am __ the couch.', 'You are __ my toes.' ],
+    in: ['My sock is __ the bag.', 'We are __ the store.', 'I am ___ college.', 'I am __ LING 320.','We are __ a box.' ],
+    with: ['She is __ me.', 'I am ___ you.', 'Will you go ___ me.', 'I like peanut butter __ my jelly.', 'I walked ___ her.'],
+    under: ['Look __ the bed.', 'Walk ___ the bridge.', 'I sleep __ the covers.', 'Drive __ the speed limit.', 'Come __ my umbrella.'],
+    around: ['I go to bed ___ 10.', 'Walk __ the mess.', 'Go ___ the accident.', 'She put her arms ___ him.', 'Turn the car ____.']
+    
+  }
+  
+  while(true) {
+  	worst_prep = prepositions[0]
+  	smallest_score = learner_model[worst_prep]
+  	for(i=1; i<prepositions.length; i++) {
+  	 if(learner_model[prepositions[i]] < smallest_score) {
+  	  smallest_score = learner_model[prepositions[i]]
+  	  worst_prep = prepositions[i]
+  	 }
+  	}
+  	question = sentences[worst_prep][parseInt(Math.random() * sentences[worst_prep].length)]
+	  answer = prompt(question)
+  		if (answer == worst_prep) {
+			  alert("CORRECT!")
+  			learner_model[worst_prep] ++
+  		}
+  		else {
+			  alert(question.replace("_____", worst_prep))
+			  learner_model[worst_prep] --
+  	}
+  	}
+  	</script>
